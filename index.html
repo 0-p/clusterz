@@ -20,8 +20,11 @@
             accessToken: 'pk.eyJ1IjoicGp4bSIsImEiOiJjamQxdnNzamEwaHhqMnhxZGh2YnZ3c204In0.cEns7xkHOKDOt1SNLOf4-Q'
         }).addTo(mymap);
 
-        var geojsontest = {
-            "type": "Feature",
+var geojsontest = {
+	"type": "FeatureCollection",
+	"features": [
+		{
+		"type": "Feature",
             "geometry": {
                 "type": "Point",
                 "coordinates": [-1.4897286, 53.3808304]
@@ -31,9 +34,28 @@
                 "Study Type": "UG",
                 "Year": 1
             }
-        }
+	},
+		{
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-1.4897226, 53.3808374]
+		},
+            "properties": {
+                "Fee Status": "EU",
+                "Study Type": "PGT",
+                "Year": 4
+	    }
+	}]
+};
 
-        L.geoJSON(geojsontest).addTo(mymap);
+	var testLayer = L.geoJSON(geojsontest, {
+		pointToLayer: function (feature, latlng) {
+			return L.marker(latlng);},
+		onEachFeature: onEachFeature
+	}).addTo(mymap);
+
+//        L.geoJSON(geojsontest).addTo(mymap);
 
     </script>
 
