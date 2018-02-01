@@ -21,18 +21,16 @@
         }).addTo(mymap);
 
         var geojsontest = {
-            "type": "FeatureCollection",
-            "features": [{
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [-1.4897286, 53.3808304]
-                },
-                "properties": {
-                    "Fee Status": "UK",
-                    "Study Type": "UG",
-                    "Year": 1
-                }
-            }]
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.4897286, 53.3808304]
+            },
+            "properties": {
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
         }
 
         L.geoJSON(geojsontest).addTo(mymap);
