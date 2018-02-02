@@ -1,14 +1,1341 @@
 {
     "type": "FeatureCollection",
     "features": [{
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-1.4897286,53.3808304]
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.713349, 53.496261]
+            },
+            "properties": {
+                "Postcode": "WN5 7QS",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 4
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.723689, 53.545744]
+            },
+            "properties": {
+                "Postcode": "WN8 0LJ",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.967041, 52.090734]
+            },
+            "properties": {
+                "Postcode": "WR11 2QA",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.941976, 52.094293]
+            },
+            "properties": {
+                "Postcode": "WR11 4QX",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.294874, 52.057544]
+            },
+            "properties": {
+                "Postcode": "WR13 6LP",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 4
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.326472, 52.108482]
+            },
+            "properties": {
+                "Postcode": "WR14 3DA",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 6
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.234036, 52.176508]
+            },
+            "properties": {
+                "Postcode": "WR2 4BE",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.233542, 52.18817]
+            },
+            "properties": {
+                "Postcode": "WR2 4EL",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.229771, 52.236932]
+            },
+            "properties": {
+                "Postcode": "WR3 7SD",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.174985, 52.209804]
+            },
+            "properties": {
+                "Postcode": "WR4 0EB",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 4
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.202423, 52.209454]
+            },
+            "properties": {
+                "Postcode": "WR4 9SY",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.449573, 52.155997]
+            },
+            "properties": {
+                "Postcode": "WR6 5AD",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.297278, 52.287406]
+            },
+            "properties": {
+                "Postcode": "WR6 6TN",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.139087, 52.252232]
+            },
+            "properties": {
+                "Postcode": "WR9 7SU",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.814948, 52.694018]
+            },
+            "properties": {
+                "Postcode": "WS13 6BD",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.837432, 52.671613]
+            },
+            "properties": {
+                "Postcode": "WS14 0GH",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.762306, 52.674471]
+            },
+            "properties": {
+                "Postcode": "WS14 9LR",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.757545, 52.676969]
+            },
+            "properties": {
+                "Postcode": "WS14 9NQ",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.991066, 52.615106]
+            },
+            "properties": {
+                "Postcode": "WS3 3FB",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.949142, 52.622468]
+            },
+            "properties": {
+                "Postcode": "WS4 1RA",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.915794, 52.610789]
+            },
+            "properties": {
+                "Postcode": "WS9 8RN",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.932136, 52.630269]
+            },
+            "properties": {
+                "Postcode": "WS9 9BH",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.437645, 52.536247]
+            },
+            "properties": {
+                "Postcode": "WV16 5AS",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.097057, 52.567463]
+            },
+            "properties": {
+                "Postcode": "WV2 2RG",
+                "Fee Status": "IN",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.152967, 52.572729]
+            },
+            "properties": {
+                "Postcode": "WV3 7BY",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.112419, 52.566266]
+            },
+            "properties": {
+                "Postcode": "WV4 6HA",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 5
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-2.179674, 52.586958]
+            },
+            "properties": {
+                "Postcode": "WV6 8AP",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.087843, 53.957501]
+            },
+            "properties": {
+                "Postcode": "YO1 6LF",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.081345, 53.963285]
+            },
+            "properties": {
+                "Postcode": "YO1 7JJ",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.069026, 53.953573]
+            },
+            "properties": {
+                "Postcode": "YO10 3FT",
+                "Fee Status": "IN",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.068296, 53.956246]
+            },
+            "properties": {
+                "Postcode": "YO10 3WW",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.072223, 53.934067]
+            },
+            "properties": {
+                "Postcode": "YO10 4PT",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.394618, 54.240921]
+            },
+            "properties": {
+                "Postcode": "YO11 3LS",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.437983, 54.292572]
+            },
+            "properties": {
+                "Postcode": "YO12 6ED",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.406333, 54.28894]
+            },
+            "properties": {
+                "Postcode": "YO12 7TH",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 4
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.499256, 54.398618]
+            },
+            "properties": {
+                "Postcode": "YO13 0ES",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.292254, 54.206535]
+            },
+            "properties": {
+                "Postcode": "YO14 0BE",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.122097, 54.115903]
+            },
+            "properties": {
+                "Postcode": "YO15 1NH",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.202411, 54.081156]
+            },
+            "properties": {
+                "Postcode": "YO15 3HQ",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.942654, 54.463485]
+            },
+            "properties": {
+                "Postcode": "YO21 2DA",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.609278, 54.482687]
+            },
+            "properties": {
+                "Postcode": "YO22 4AB",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.607209, 54.471805]
+            },
+            "properties": {
+                "Postcode": "YO22 4JW",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.663613, 54.453798]
+            },
+            "properties": {
+                "Postcode": "YO22 5DL",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 5
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.083711, 53.951996]
+            },
+            "properties": {
+                "Postcode": "YO23 1AU",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.093376, 53.944124]
+            },
+            "properties": {
+                "Postcode": "YO23 1EZ",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.087868, 53.944451]
+            },
+            "properties": {
+                "Postcode": "YO23 1JA",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.094492, 53.953085]
+            },
+            "properties": {
+                "Postcode": "YO24 1AX",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.109426, 53.932335]
+            },
+            "properties": {
+                "Postcode": "YO24 1UQ",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.113135, 53.940569]
+            },
+            "properties": {
+                "Postcode": "YO24 2HZ",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.115438, 53.938276]
+            },
+            "properties": {
+                "Postcode": "YO24 2PT",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.123178, 53.941119]
+            },
+            "properties": {
+                "Postcode": "YO24 2UB",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.136276, 53.939092]
+            },
+            "properties": {
+                "Postcode": "YO24 2YF",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.101114, 53.953413]
+            },
+            "properties": {
+                "Postcode": "YO24 4BA",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.10507, 53.954377]
+            },
+            "properties": {
+                "Postcode": "YO24 4DG",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.104444, 53.950885]
+            },
+            "properties": {
+                "Postcode": "YO24 4DU",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.115252, 53.955738]
+            },
+            "properties": {
+                "Postcode": "YO24 4EY",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.109199, 53.954435]
+            },
+            "properties": {
+                "Postcode": "YO24 4JE",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.107871, 53.953104]
+            },
+            "properties": {
+                "Postcode": "YO24 4JJ",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.111252, 53.951062]
+            },
+            "properties": {
+                "Postcode": "YO24 4LE",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.120947, 53.956382]
+            },
+            "properties": {
+                "Postcode": "YO24 4LU",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.424796, 54.012373]
+            },
+            "properties": {
+                "Postcode": "YO25 5NH",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.441924, 54.006529]
+            },
+            "properties": {
+                "Postcode": "YO25 6TQ",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.101551, 53.961416]
+            },
+            "properties": {
+                "Postcode": "YO26 4WS",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.109524, 53.964189]
+            },
+            "properties": {
+                "Postcode": "YO26 4XY",
+                "Fee Status": "IN",
+                "Study Type": "UG",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.106637, 53.963799]
+            },
+            "properties": {
+                "Postcode": "YO26 4YG",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.10817, 53.964089]
+            },
+            "properties": {
+                "Postcode": "YO26 4YL",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.130421, 53.954419]
+            },
+            "properties": {
+                "Postcode": "YO26 5FD",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.123209, 53.959275]
+            },
+            "properties": {
+                "Postcode": "YO26 5HS",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.125501, 53.958959]
+            },
+            "properties": {
+                "Postcode": "YO26 5LA",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.149966, 53.981272]
+            },
+            "properties": {
+                "Postcode": "YO26 6JA",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.234514, 53.951676]
+            },
+            "properties": {
+                "Postcode": "YO26 7LR",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.221834, 54.014807]
+            },
+            "properties": {
+                "Postcode": "YO26 8ES",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 4
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.093737, 53.978057]
+            },
+            "properties": {
+                "Postcode": "YO30 5GJ",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.113822, 53.985783]
+            },
+            "properties": {
+                "Postcode": "YO30 5UH",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.094619, 53.969039]
+            },
+            "properties": {
+                "Postcode": "YO30 6FE",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.045085, 53.961906]
+            },
+            "properties": {
+                "Postcode": "YO31 0RQ",
+                "Fee Status": "IN",
+                "Study Type": "PGR",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.056991, 53.972624]
+            },
+            "properties": {
+                "Postcode": "YO31 1EF",
+                "Fee Status": "IN",
+                "Study Type": "UG",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.079728, 53.971677]
+            },
+            "properties": {
+                "Postcode": "YO31 8HR",
+                "Fee Status": "IN",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.075486, 53.97115]
+            },
+            "properties": {
+                "Postcode": "YO31 8JB",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.074758, 53.970686]
+            },
+            "properties": {
+                "Postcode": "YO31 8LY",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.071071, 53.967458]
+            },
+            "properties": {
+                "Postcode": "YO31 8WD",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.079149, 54.006896]
+            },
+            "properties": {
+                "Postcode": "YO32 3FE",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 5
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.073129, 54.003839]
+            },
+            "properties": {
+                "Postcode": "YO32 3HH",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.073418, 53.992912]
+            },
+            "properties": {
+                "Postcode": "YO32 4AR",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.021971, 54.043583]
+            },
+            "properties": {
+                "Postcode": "YO32 5ZS",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.061189, 53.998812]
+            },
+            "properties": {
+                "Postcode": "YO32 9GN",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.060615, 53.99177]
+            },
+            "properties": {
+                "Postcode": "YO32 9PG",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.895211, 53.948613]
+            },
+            "properties": {
+                "Postcode": "YO41 5LY",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.771745, 53.929851]
+            },
+            "properties": {
+                "Postcode": "YO42 2PL",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.777386, 53.874396]
+            },
+            "properties": {
+                "Postcode": "YO42 4JD",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 5
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.65823, 53.859991]
+            },
+            "properties": {
+                "Postcode": "YO43 3DD",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.674786, 53.864903]
+            },
+            "properties": {
+                "Postcode": "YO43 3FF",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.667631, 53.861327]
+            },
+            "properties": {
+                "Postcode": "YO43 3JR",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.770503, 53.83626]
+            },
+            "properties": {
+                "Postcode": "YO43 4EN",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 2
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.408593, 54.089363]
+            },
+            "properties": {
+                "Postcode": "YO51 9NR",
+                "Fee Status": "EU",
+                "Study Type": "PGR",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-0.90988, 54.060901]
+            },
+            "properties": {
+                "Postcode": "YO60 7PD",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 3
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.080948, 54.20138]
+            },
+            "properties": {
+                "Postcode": "YO62 4EX",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 6
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.28748, 54.33173]
+            },
+            "properties": {
+                "Postcode": "YO7 2LL",
+                "Fee Status": "UK",
+                "Study Type": "PGR",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.075515, 53.78106]
+            },
+            "properties": {
+                "Postcode": "YO8 4AR",
+                "Fee Status": "UK",
+                "Study Type": "PGT",
+                "Year": 1
+            }
+  },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-1.090792, 53.772646]
+            },
+            "properties": {
+                "Postcode": "YO8 9RY",
+                "Fee Status": "UK",
+                "Study Type": "UG",
+                "Year": 4
+            }
+  }
+],
+    "properties": {
+        "fields": {
+            "Postcode": {
+                "name": "Postcode"
+            },
+            "Fee Status": {
+                "lookup": {
+                    "UK": "Home",
+                    "EU": "Europe",
+                    "IN": "Overseas"
+                },
+                "name": "HEO"
+            },
+            "Study Type": {
+                "lookup": {
+                    "UG": "Undergraduate",
+                    "PGT": "Postgraduate Taught",
+                    "PGR": "Postgraduate Research"
+                },
+                "name": "Study Type"
+            },
+            "Year": {
+                "lookup": {
+                    "1": 1,
+                    "3": 2,
+                    "2": 3,
+                    "5": 4,
+                    "4": 5,
+                    "6": 6,
+                    "7": 7
+                },
+                "name": "Year"
+            }
         },
-        "properties": {
-            "Fee Status": "UK",
-            "Study Type": "UG",
-            "Year": 1
-        }
-    }]
+        "attribution": "",
+        "description": "Postcode data for UoS Students"
+    }
 }
