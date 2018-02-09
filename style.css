@@ -7,3 +7,32 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.category-1{
+  fill: #e41a1c;
+  stroke: #fff;
+}
+.category-2{
+  fill: #377eb8;
+  stroke: #fff;
+}
+.category-3{
+  fill: #4daf4a;
+  stroke: #fff;
+}
+.category-4{
+  fill: #984ea3;
+  stroke: #fff;
+}
+.category-5{
+  fill: #ff7f00;
+  stroke: #fff;
+}
+.category-6{
+  fill: #ffff33;
+  stroke: #fff;
+}
+.category-7{
+  fill: #a65628;
+  stroke: #fff;
+}

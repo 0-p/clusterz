@@ -29,9 +29,9 @@
         }).addTo(mymap);
 
         var geojsonPath = "data/testdata.geojson";
-                        var geojsonPath = "data/postcodes.geojson";
+        var geojsonPath = "data/postcodes.geojson";
         var rmax = 30;
-        var categoryField = "Year";
+        var categoryField = "Fee Status";
 
         // Load in locations from .geoJSON file, create layer, add to map
         d3.json(geojsonPath, function(error, data) {
@@ -68,7 +68,6 @@
         });
 
         function defineClusterIcon(cluster) {
-            console.log(metadata);
             var children = cluster.getAllChildMarkers(),
                 n = children.length, //Get number of markers in cluster
                 strokeWidth = 1, //Set clusterpie stroke width
@@ -117,7 +116,7 @@
                 valueFunc = options.valueFunc,
                 r = options.outerRadius ? options.outerRadius : 28, //Default outer radius = 28px
                 rInner = options.innerRadius ? options.innerRadius : r - 10, //Default inner radius = r-10
-                strokeWidth = options.strokeWidth ? options.strokeWidth : 1, //Default stroke is 1
+                strokeWidth = options.strokeWidth ? options.strokeWidth : 2, //Default stroke is 1
                 pathClassFunc = options.pathClassFunc ? options.pathClassFunc : function() {
                     return '';
                 }, //Class for each path
