@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Clusterz</title>
+    <title>Student </title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
@@ -16,7 +16,10 @@
 <body>
     <div id="map"></div>
     <script>
+        "use strict"
         var mymap = L.map('map').setView([53.3808304, -1.4897286], 7); // Centred on the SU
+
+        var metadata;
 
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -26,7 +29,7 @@
         }).addTo(mymap);
 
         var geojsonPath = "data/testdata.geojson";
-                var geojsonPath = "data/postcodes.geojson";
+                        var geojsonPath = "data/postcodes.geojson";
         var rmax = 30;
         var categoryField = "Year";
 
@@ -34,7 +37,7 @@
         d3.json(geojsonPath, function(error, data) {
             if (!error) {
                 console.log("File " + geojsonPath + " loaded");
-                var metadata = data.properties;
+                metadata = data.properties;
                 console.log(metadata);
                 var markerLayer = L.geoJSON(data, {
                     pointToLayer: function(feature, latlng) {
@@ -43,16 +46,18 @@
                 });
 
                 var byYear = d3.nest().key(function(d) {
-                    return d.properties.Year;
-                })
-                .rollup(function(v) {return v.length;})
-                .entries(data.features);
+                        return d.properties.Year;
+                    })
+                    .rollup(function(v) {
+                        return v.length;
+                    })
+                    .entries(data.features);
                 console.log(byYear);
 
 
 
                 var clusters = L.markerClusterGroup({
-                    //                    iconCreateFunction: defineClusterIcon
+                    iconCreateFunction: defineClusterIcon
 
                 });
                 clusters.addLayer(markerLayer);
@@ -63,6 +68,7 @@
         });
 
         function defineClusterIcon(cluster) {
+            console.log(metadata);
             var children = cluster.getAllChildMarkers(),
                 n = children.length, //Get number of markers in cluster
                 strokeWidth = 1, //Set clusterpie stroke width
@@ -89,7 +95,7 @@
                         return "category-" + d.data.key;
                     },
                     pathTitleFunc: function(d) {
-                        return metadata.fields[categoryField].lookup[d.data.key] + ' (' + d.data.values.length + ' accident' + (d.data.values.length != 1 ? 's' : '') + ')';
+                        return metadata.fields[categoryField].lookup[d.data.key] + ' (' + d.data.values.length + ' Student' + (d.data.values.length != 1 ? 's' : '') + ')';
                     }
                 }),
                 //Create a new divIcon and assign the svg markup to the html property
@@ -161,6 +167,15 @@
                 .text(pieLabel);
             //Return the svg-markup rather than the actual element
             return serializeXmlNode(svg);
+        }
+
+        function serializeXmlNode(xmlNode) {
+            if (typeof window.XMLSerializer != "undefined") {
+                return (new window.XMLSerializer()).serializeToString(xmlNode);
+            } else if (typeof xmlNode.xml != "undefined") {
+                return xmlNode.xml;
+            }
+            return "";
         }
 
     </script>
