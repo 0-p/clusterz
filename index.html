@@ -2,10 +2,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Clusterz</title>
+    <title>Postcode</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/d3@4.13.0/build/d3.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
@@ -15,7 +14,10 @@
 <body>
     <div id="map"></div>
     <script>
-        var mymap = L.map('map').setView([53.3808304, -1.4897286], 7);
+        "use strict"
+        var mymap = L.map('map').setView([53.3808304, -1.4897286], 7); // Centred on the SU
+
+        var metadata;
 
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -24,37 +26,143 @@
             accessToken: 'pk.eyJ1IjoicGp4bSIsImEiOiJjamQxdnNzamEwaHhqMnhxZGh2YnZ3c204In0.cEns7xkHOKDOt1SNLOf4-Q'
         }).addTo(mymap);
 
-        function onEachFeature(feature, layer) {
-            var popupContent = "<p>" +
-                feature.properties.Postcode + "</p>";
-
-            if (feature.properties && feature.properties.popupContent) {
-                popupContent += feature.properties.popupContent;
-            }
-
-            layer.bindPopup(popupContent);
-        }
-
-        var geojsonPath = "data/postcodes.geojson"
+        var geojsonPath = "data/testdata.geojson";
+        var geojsonPath = "data/postcodes.geojson";
+        var rmax = 30;
+        var categoryField = "Fee Status";
 
         // Load in locations from .geoJSON file, create layer, add to map
         d3.json(geojsonPath, function(error, data) {
             if (!error) {
-                console.log("File " + geojsonPath + " loaded");
-                var testLayer = L.geoJSON(data, {
+                console.log("Using file " + geojsonPath + ". Metadata: ");
+                metadata = data.properties;
+                console.log(metadata);
+                var markerLayer = L.geoJSON(data, {
                     pointToLayer: function(feature, latlng) {
                         return L.marker(latlng);
-                    },
-                    onEachFeature: onEachFeature //add comma to previous line if uncommented
-                })<!--.addTo(mymap)-->;
+                    }
+                });
 
-                var clusters = L.markerClusterGroup();
-                clusters.addLayer(testLayer);
+                var clusters = L.markerClusterGroup({
+                    iconCreateFunction: defineClusterIcon
+
+                });
+                clusters.addLayer(markerLayer);
                 mymap.addLayer(clusters);
             } else {
                 console.log('Could not load data...');
             }
         });
+
+        function defineClusterIcon(cluster) {
+            var children = cluster.getAllChildMarkers(),
+                n = children.length, //Get number of markers in cluster
+                strokeWidth = 1, //Set clusterpie stroke width
+                r = rmax - 2 * strokeWidth - (n < 10 ? 12 : n < 100 ? 8 : n < 1000 ? 4 : 0), //Calculate clusterpie radius...
+                iconDim = (r + strokeWidth) * 2, //...and divIcon dimensions (leaflet really want to know the size)
+                data = d3.nest() //Build a dataset for the pie chart
+                .key(function(d) {
+                    return d.feature.properties[categoryField];
+                })
+                .entries(children, d3.map),
+                //bake some svg markup
+                html = bakeThePie({
+                    data: data,
+                    valueFunc: function(d) {
+                        return d.values.length;
+                    },
+                    strokeWidth: 1,
+                    outerRadius: r,
+                    innerRadius: r - 10,
+                    pieClass: 'cluster-pie',
+                    pieLabel: n,
+                    pieLabelClass: 'marker-cluster-pie-label',
+                    pathClassFunc: function(d) {
+                        return "category-" + d.data.key;
+                    },
+                    pathTitleFunc: function(d) {
+                        return metadata.fields[categoryField].lookup[d.data.key] + ' (' + d.data.values.length + ' Student' + (d.data.values.length != 1 ? 's' : '') + ')';
+                    }
+                }),
+                //Create a new divIcon and assign the svg markup to the html property
+                myIcon = new L.DivIcon({
+                    html: html,
+                    className: 'marker-cluster',
+                    iconSize: new L.Point(iconDim, iconDim)
+                });
+            return myIcon;
+        }
+
+        /*function that generates a svg markup for the pie chart*/
+        function bakeThePie(options) {
+            /*data and valueFunc are required*/
+            if (!options.data || !options.valueFunc) {
+                return '';
+            }
+            var data = options.data,
+                valueFunc = options.valueFunc,
+                r = options.outerRadius ? options.outerRadius : 28, //Default outer radius = 28px
+                rInner = options.innerRadius ? options.innerRadius : r - 10, //Default inner radius = r-10
+                strokeWidth = options.strokeWidth ? options.strokeWidth : 2, //Default stroke is 1
+                pathClassFunc = options.pathClassFunc ? options.pathClassFunc : function() {
+                    return '';
+                }, //Class for each path
+                pathTitleFunc = options.pathTitleFunc ? options.pathTitleFunc : function() {
+                    return '';
+                }, //Title for each path
+                pieClass = options.pieClass ? options.pieClass : 'marker-cluster-pie', //Class for the whole pie
+                pieLabel = options.pieLabel ? options.pieLabel : d3.sum(data, valueFunc), //Label for the whole pie
+                pieLabelClass = options.pieLabelClass ? options.pieLabelClass : 'marker-cluster-pie-label', //Class for the pie label
+
+                origo = (r + strokeWidth), //Center coordinate
+                w = origo * 2, //width and height of the svg element
+                h = w,
+                donut = d3.pie(),
+                arc = d3.arc().innerRadius(rInner).outerRadius(r);
+
+            //Create an svg element
+            var svg = document.createElementNS(d3.namespace('svg'), 'svg');
+            //Create the pie chart
+            var vis = d3.select(svg)
+                .data([data])
+                .attr('class', pieClass)
+                .attr('width', w)
+                .attr('height', h);
+
+            var arcs = vis.selectAll('g.arc')
+                .data(donut.value(valueFunc))
+                .enter().append('svg:g')
+                .attr('class', 'arc')
+                .attr('transform', 'translate(' + origo + ',' + origo + ')');
+
+            arcs.append('svg:path')
+                .attr('class', pathClassFunc)
+                .attr('stroke-width', strokeWidth)
+                .attr('d', arc)
+                .append('svg:title')
+                .text(pathTitleFunc);
+
+            vis.append('text')
+                .attr('x', origo)
+                .attr('y', origo)
+                .attr('class', pieLabelClass)
+                .attr('text-anchor', 'middle')
+                //.attr('dominant-baseline', 'central')
+                /*IE doesn't seem to support dominant-baseline, but setting dy to .3em does the trick*/
+                .attr('dy', '.3em')
+                .text(pieLabel);
+            //Return the svg-markup rather than the actual element
+            return serializeXmlNode(svg);
+        }
+
+        function serializeXmlNode(xmlNode) {
+            if (typeof window.XMLSerializer != "undefined") {
+                return (new window.XMLSerializer()).serializeToString(xmlNode);
+            } else if (typeof xmlNode.xml != "undefined") {
+                return xmlNode.xml;
+            }
+            return "";
+        }
 
     </script>
 </body>
