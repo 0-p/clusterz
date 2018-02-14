@@ -14,6 +14,31 @@
 
 <body>
     <div id="map"></div>
+
+    <div id="filters">
+        <div class="dropdown">
+            <button onclick="filterDropdown(year)" class="dropButton">Year</button>
+            <div id="yearDrop" class="dropdownContent">
+                    <label><div class="dropItem">
+                        <input type="checkbox" onclick="updateFilter()"/>
+                        1
+                        </div>
+                    </label>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="filterDropdown(study)" class="dropButton">Study Type</button>
+            <div id="studyDrop">
+
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="filterDropdown(heo)" class="dropButton">HEO</button>
+            <div id="heoDrop">
+
+            </div>
+        </div>
+    </div>
     <script>
         "use strict"
         var mymap = L.map('map').setView([53.3808304, -1.4897286], 7); // Centred on the SU
@@ -53,5 +78,6 @@
                 console.log('Could not load data...');
             }
         });
+
     </script>
 </body>
