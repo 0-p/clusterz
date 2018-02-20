@@ -1,3 +1,10 @@
+// Globu varial
+
+var centreLat = 53.3808304,
+    centreLon = -1.4897286,
+    maxZoom = 7;
+
+
 function defineClusterIcon(cluster) {
     var children = cluster.getAllChildMarkers(),
         n = children.length, //Get number of markers in cluster
@@ -108,3 +115,10 @@ function serializeXmlNode(xmlNode) {
     return "";
 }
 
+function filterDropdown(div) {
+    document.getElementById("yearDrop").classList.toggle("show");
+}
+
+function testGeoJSONFilter(feature) {
+    if (feature.properties.Year === 1) {return true;}
+}

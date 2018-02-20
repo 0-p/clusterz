@@ -17,7 +17,7 @@
 
     <div id="filters">
         <div class="dropdown">
-            <button onclick="filterDropdown(year)" class="dropButton">Year</button>
+            <button onclick="filterDropdown()" class="dropButton">Year</button>
             <div id="yearDrop" class="dropdownContent">
                     <label><div class="dropItem">
                         <input type="checkbox" onclick="updateFilter()"/>
@@ -39,9 +39,12 @@
             </div>
         </div>
     </div>
+    <div id="legend">
+
+    </div>
     <script>
         "use strict"
-        var mymap = L.map('map').setView([53.3808304, -1.4897286], 7); // Centred on the SU
+        var mymap = L.map('map').setView([centreLat, centreLon], maxZoom); // Centred on the SU
 
         var metadata;
 
@@ -66,6 +69,9 @@
                 var markerLayer = L.geoJSON(data, {
                     pointToLayer: function(feature, latlng) {
                         return L.marker(latlng);
+                    },
+                    filter: function(feature) {
+                        if (feature.properties.Year === 1) return true
                     }
                 });
 
