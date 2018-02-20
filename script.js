@@ -11,7 +11,10 @@ var centreLat = 53.3808304,
     metadata,
     markerLayer,
     clusters,
+    data,
     mymap = L.map('map').setView([centreLat, centreLon], 12); // Centred on the SU;
+
+// Init map
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -29,7 +32,7 @@ d3.json(geojsonPath, function (error, data) {
         markerLayer = L.geoJSON(data, {
             pointToLayer: function (feature, latlng) {
                 return L.marker(latlng);
-            },
+            }
         });
 
         clusters = L.markerClusterGroup({
@@ -41,7 +44,6 @@ d3.json(geojsonPath, function (error, data) {
         console.log('Could not load data...');
     }
 });
-
 
 function defineClusterIcon(cluster) {
     var children = cluster.getAllChildMarkers(),
@@ -153,12 +155,32 @@ function serializeXmlNode(xmlNode) {
     return "";
 }
 
+/*
+ * toggles the visibility of the div passed via css class .show
+ * @param div ID of div to show/hide.
+ */
 function filterDropdown(div) {
     document.getElementById(div).classList.toggle("show");
 }
 
 function testGeoJSONFilter(feature) {
-    if (feature.properties.Year === 1) {
-        return true;
-    }
+    console.log("running test GeoJSON filter");
+
+    markerLayer = L.geoJSON(data, {
+        pointToLayer: function (feature, latlng) {
+            return L.marker(latlng);
+        },
+        filter: function (feature) {
+            if (feature.properties.Year === 1) {
+                return true;
+            }
+        }
+    });
+    clusters.removeLayer(markerLayer);
+    clusters.addLayer(markerLayer);
+    clusters.refreshClusters();
+    console.log("finished function");
+    //    if (feature.properties.Year === 1) {
+    //        return true;
+    //    }
 }
