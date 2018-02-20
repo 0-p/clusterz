@@ -2,7 +2,7 @@
 
 var centreLat = 53.3808304,
     centreLon = -1.4897286,
-    maxZoom = 7;
+    maxZoom = 16;
 
 
 function defineClusterIcon(cluster) {
@@ -116,7 +116,7 @@ function serializeXmlNode(xmlNode) {
 }
 
 function filterDropdown(div) {
-    document.getElementById("yearDrop").classList.toggle("show");
+    document.getElementById(div).classList.toggle("show");
 }
 
 function testGeoJSONFilter(feature) {

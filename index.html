@@ -17,25 +17,85 @@
 
     <div id="filters">
         <div class="dropdown">
-            <button onclick="filterDropdown()" class="dropButton">Year</button>
+            <button onclick="filterDropdown('yearDrop')" class="menuItem">Year</button>
             <div id="yearDrop" class="dropdownContent">
-                    <label><div class="dropItem">
+                <label><div class="menuItem">
                         <input type="checkbox" onclick="updateFilter()"/>
                         1
+                        </div>
+                    </label>
+                <label><div class="menuItem">
+                        <input type="checkbox" onclick="updateFilter()"/>
+                        2
+                        </div>
+                    </label>
+                <label><div class="menuItem">
+                        <input type="checkbox" onclick="updateFilter()"/>
+                        3
+                        </div>
+                    </label>
+                <label><div class="menuItem">
+                        <input type="checkbox" onclick="updateFilter()"/>
+                        4
+                        </div>
+                    </label>
+                <label><div class="menuItem">
+                        <input type="checkbox" onclick="updateFilter()"/>
+                        5
+                        </div>
+                    </label>
+                <label><div class="menuItem">
+                        <input type="checkbox" onclick="updateFilter()"/>
+                        6
+                        </div>
+                    </label>
+                <label><div class="menuItem">
+                        <input type="checkbox" onclick="updateFilter()"/>
+                        7
                         </div>
                     </label>
             </div>
         </div>
         <div class="dropdown">
-            <button onclick="filterDropdown(study)" class="dropButton">Study Type</button>
-            <div id="studyDrop">
-
+            <button onclick="filterDropdown('studyDrop')" class="menuItem">Study Type</button>
+            <div id="studyDrop" class="dropdownContent">
+                <label>
+                    <div class="menuItem">
+                        <input type="checkbox" onclick="updateFilter()"/>
+                        UG
+                    </div>
+                </label>
+                <label><div class="menuItem">
+                    <input type="checkbox" onclick="updateFilter()"/>
+                    PGT
+                    </div>
+                </label>
+                <label><div class="menuItem">
+                    <input type="checkbox" onclick="updateFilter()"/>
+                    PGR
+                    </div>
+                </label>
             </div>
         </div>
         <div class="dropdown">
-            <button onclick="filterDropdown(heo)" class="dropButton">HEO</button>
-            <div id="heoDrop">
-
+            <button onclick="filterDropdown('heoDrop')" class="menuItem">HEO</button>
+            <div id="heoDrop" class="dropdownContent">
+                <label>
+                    <div class="menuItem">
+                        <input type="checkbox" onclick="updateFilter()"/>
+                        UK
+                    </div>
+                </label>
+                <label><div class="menuItem">
+                    <input type="checkbox" onclick="updateFilter()"/>
+                    EU
+                    </div>
+                </label>
+                <label><div class="menuItem">
+                    <input type="checkbox" onclick="updateFilter()"/>
+                    IN
+                    </div>
+                </label>
             </div>
         </div>
     </div>
@@ -44,13 +104,13 @@
     </div>
     <script>
         "use strict"
-        var mymap = L.map('map').setView([centreLat, centreLon], maxZoom); // Centred on the SU
+        var mymap = L.map('map').setView([centreLat, centreLon], 7); // Centred on the SU
 
         var metadata;
 
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-            maxZoom: 16,
+            maxZoom: maxZoom,
             id: 'mapbox.streets',
             accessToken: 'pk.eyJ1IjoicGp4bSIsImEiOiJjamQxdnNzamEwaHhqMnhxZGh2YnZ3c204In0.cEns7xkHOKDOt1SNLOf4-Q'
         }).addTo(mymap);
