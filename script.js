@@ -5,13 +5,43 @@
 var centreLat = 53.3808304,
     centreLon = -1.4897286,
     maxZoom = 16,
-    geojsonPath = "data/testdata.geojson",
     geojsonPath = "data/postcodes.geojson",
     rmax = 30,
     categoryField = "Fee Status",
     metadata,
     markerLayer,
-    clusters;
+    clusters,
+    mymap = L.map('map').setView([centreLat, centreLon], 12); // Centred on the SU;
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: maxZoom,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoicGp4bSIsImEiOiJjamQxdnNzamEwaHhqMnhxZGh2YnZ3c204In0.cEns7xkHOKDOt1SNLOf4-Q'
+}).addTo(mymap);
+
+// Load in locations from .geoJSON file, create layer, add to map
+d3.json(geojsonPath, function (error, data) {
+    if (!error) {
+        console.log("Using file " + geojsonPath + ". Metadata: ");
+        metadata = data.properties;
+        console.log(metadata);
+        markerLayer = L.geoJSON(data, {
+            pointToLayer: function (feature, latlng) {
+                return L.marker(latlng);
+            },
+        });
+
+        clusters = L.markerClusterGroup({
+            iconCreateFunction: defineClusterIcon // could add chunked loading if it seems too slow, think d3 is the bottleneck atm tho
+        });
+        clusters.addLayer(markerLayer);
+        mymap.addLayer(clusters);
+    } else {
+        console.log('Could not load data...');
+    }
+});
+
 
 function defineClusterIcon(cluster) {
     var children = cluster.getAllChildMarkers(),
@@ -128,5 +158,7 @@ function filterDropdown(div) {
 }
 
 function testGeoJSONFilter(feature) {
-    if (feature.properties.Year === 1) {return true;}
+    if (feature.properties.Year === 1) {
+        return true;
+    }
 }
