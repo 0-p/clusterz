@@ -1,9 +1,17 @@
+"use strict";
+
 // Globu varial
 
 var centreLat = 53.3808304,
     centreLon = -1.4897286,
-    maxZoom = 16;
-
+    maxZoom = 16,
+    geojsonPath = "data/testdata.geojson",
+    geojsonPath = "data/postcodes.geojson",
+    rmax = 30,
+    categoryField = "Fee Status",
+    metadata,
+    markerLayer,
+    clusters;
 
 function defineClusterIcon(cluster) {
     var children = cluster.getAllChildMarkers(),
