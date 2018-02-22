@@ -10,9 +10,9 @@ var centreLat = 53.3808304,
     categoryField = "Fee Status",
     metadata,
     markerLayer,
-    clusters,
+    clusters = L.markerClusterGroup(),
     data,
-    mymap = L.map('map').setView([centreLat, centreLon], 12); // Centred on the SU;
+    mymap = L.map('map').setView([centreLat, centreLon], 7); // Centred on the SU;
 
 // Init map
 
@@ -23,27 +23,35 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoicGp4bSIsImEiOiJjamQxdnNzamEwaHhqMnhxZGh2YnZ3c204In0.cEns7xkHOKDOt1SNLOf4-Q'
 }).addTo(mymap);
 
-// Load in locations from .geoJSON file, create layer, add to map
-d3.json(geojsonPath, function (error, data) {
-    if (!error) {
-        console.log("Using file " + geojsonPath + ". Metadata: ");
-        metadata = data.properties;
-        console.log(metadata);
-        markerLayer = L.geoJSON(data, {
-            pointToLayer: function (feature, latlng) {
-                return L.marker(latlng);
-            }
-        });
+clusters.addTo(mymap);
 
-        clusters = L.markerClusterGroup({
-            iconCreateFunction: defineClusterIcon // could add chunked loading if it seems too slow, think d3 is the bottleneck atm tho
-        });
-        clusters.addLayer(markerLayer);
-        mymap.addLayer(clusters);
-    } else {
-        console.log('Could not load data...');
-    }
+markerLayer = new L.GeoJSON.AJAX(geojsonPath);
+
+markerLayer.on('data:loaded', function () {
+    clusters.addLayer(this);
 });
+
+// Load in locations from .geoJSON file, create layer, add to map
+//d3.json(geojsonPath, function (error, data) {
+//    if (!error) {
+//        console.log("Using file " + geojsonPath + ". Metadata: ");
+//        metadata = data.properties;
+//        console.log(metadata);
+//        markerLayer = L.geoJSON(data, {
+//            pointToLayer: function (feature, latlng) {
+//                return L.marker(latlng);
+//            }
+//        });
+//
+//        clusters = L.markerClusterGroup({
+//            iconCreateFunction: defineClusterIcon // could add chunked loading if it seems too slow, think d3 is the bottleneck atm tho
+//        });
+//        clusters.addLayer(markerLayer);
+//        mymap.addLayer(clusters);
+//    } else {
+//        console.log('Could not load data...');
+//    }
+//});
 
 function defineClusterIcon(cluster) {
     var children = cluster.getAllChildMarkers(),
@@ -161,6 +169,12 @@ function serializeXmlNode(xmlNode) {
  */
 function filterDropdown(div) {
     document.getElementById(div).classList.toggle("show");
+}
+
+function testAjaxFilter (filter, val) {
+    markerLayer.refilter(function (feature) {
+        return feature.properties.Year === 1;
+    });
 }
 
 function testGeoJSONFilter(feature) {

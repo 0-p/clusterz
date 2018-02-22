@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postodes TESTING</title>
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="lib/leaflet.markercluster/MarkerCluster.css" />
+    <link rel="stylesheet" href="lib/leaflet.markercluster/MarkerCluster.Default.css" />
+    <script src="lib/leaflet/leaflet.js"></script>
+    <script src="lib/leaflet.ajax.js"></script>
+    <script src="lib/leaflet.markercluster/leaflet.markercluster.js"></script>
+</head>
+
+<body>
+    <div id="map" style="height: 100vh"></div>
+
+    <script>
+        var m = L.map("map").setView([51.505, -0.09], 7),
+            geojsonPath = "data/testdata.geojson";
+
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1IjoicGp4bSIsImEiOiJjamQxdnNzamEwaHhqMnhxZGh2YnZ3c204In0.cEns7xkHOKDOt1SNLOf4-Q'
+        }).addTo(m);
+
+        var geoLayer = new L.GeoJSON.AJAX(geojsonPath);
+
+        var cluster = L.markerClusterGroup().addTo(m);
+
+        geoLayer.on('data:loaded', function () {
+            cluster.addLayer(this);
+        })
+
+
+//        console.log("1");
+//        L.Util.ajax(geojsonPath).then(function(data) {
+//            console.log(data.properties);
+//            //check if it's an array of points or a feature collection
+//            var features = data.features;
+//            //map the features to points
+//            clusters.addLayers(features.map(function(feature) {
+//                if (feature.geometry.type === "Point") {
+//                    console.log("Added " + feature.geometry.type);
+//                    return L.marker([feature.geometry.coordinates[1], feature.coordinates[0]]); //geojson is lng,lat
+//                } else {
+//                    console.log("Skipped " + feature.geometry.type);
+//                }
+//            }).filter(function(v) {
+//                console.log(v);
+//                return v
+//            })) //filter out any that weren't points
+//            console.log("1.5");
+//        });
+//        console.log("2");
+        //
+        //        m.addLayer(clusters);
+        //        console.log("3");
+
+    </script>
+</body>
